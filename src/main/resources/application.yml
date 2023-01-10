@@ -28,3 +28,20 @@ module:
   logging:
     dir: C://dev/hrm-log
     level: INFO
+springdoc:
+  packages-to-scan: kr.co.hrm
+  default-produces-media-type: application/json;charset=UTF-8
+  default-consumes-media-type: application/json;charset=UTF-8
+  title: hrm api swagger
+  version: v1.0.0
+  description: hrm project description
+  cache:
+    disabled: true
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /api-docs
+  api-docs:
+    path: /api-docs/json
+    groups:
+      enabled: true
