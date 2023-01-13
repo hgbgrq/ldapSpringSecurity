@@ -1,5 +1,7 @@
 package kr.co.hrm.service;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,12 @@ class SampleServiceTest {
     void getSample() {
         String id = beforeCreateSample();
         sampleService.getSample(id);
+    }
+
+    @Test
+    void getSamplesBySampleColLike() {
+        beforeCreateSample();
+        sampleService.getSamplesBySampleColLike("Create");
     }
 
     @Test

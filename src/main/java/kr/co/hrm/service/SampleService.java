@@ -1,5 +1,6 @@
 package kr.co.hrm.service;
 
+import kr.co.hrm.entity.Sample;
 import kr.co.hrm.repository.SampleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,20 @@ public class SampleService {
         try {
             Optional<kr.co.hrm.entity.Sample> sampleEntity = sampleRepository.findById(sampleId);
             log.info("getSample ? : {}" , sampleEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getSamplesBySampleColLike(String SampleCol) {
+        try {
+            Iterable<kr.co.hrm.entity.Sample> samples = sampleRepository.findBySampleColLikes(SampleCol);
+            int size = 0;
+            for(Sample sample : samples) {
+                size++;
+            }
+            log.info("samples size ?  ? : {}" , size);
+            log.info("samples ? : {}" , samples);
         } catch (Exception e) {
             e.printStackTrace();
         }
