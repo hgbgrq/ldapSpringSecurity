@@ -28,6 +28,12 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.security:spring-security-ldap:5.7.6'
+    implementation 'org.springframework.ldap:spring-ldap-core:2.3.3.RELEASE'
+    implementation 'com.unboundid:unboundid-ldapsdk'
+    implementation 'commons-codec:commons-codec:1.15'
 }
 
 tasks.named('test') {

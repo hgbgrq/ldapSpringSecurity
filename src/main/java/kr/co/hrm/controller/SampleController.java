@@ -1,9 +1,11 @@
 package kr.co.hrm.controller;
 
 import kr.co.hrm.service.SampleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/sample")
 public class SampleController {
@@ -34,6 +36,11 @@ public class SampleController {
     @PatchMapping
     public void modifySample(@RequestBody kr.co.hrm.entity.Sample sampleModel) {
         sampleService.modifySample(sampleModel);
+    }
+
+    @GetMapping("/login")
+    public void login(String username, String password) {
+        log.info("로그인 요청 페이지");
     }
 
 }

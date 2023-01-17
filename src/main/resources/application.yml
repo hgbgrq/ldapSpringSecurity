@@ -18,6 +18,29 @@ spring:
         show_sql: true
         dialect:
           storage_engine: innodb
+#  ldap:
+#    urls: ldap://ldap.abacussw.co.kr:389/
+#    base: dc=abacussw,dc=co,dc=kr
+#    username: uid=root,cn=users,dc=abacussw,dc=co,dc=kr
+#    password: Abacus10!@
+#    user:
+#      dn:
+#        pattern: uid={0}
+#  ldap:
+#    embedded:
+#      ldif: classpath:test-server.ldif
+#      base-dn: dc=springframework,dc=org
+#      port: 8389
+  ldap:
+    urls: ldap://ldap.abacussw.co.kr:389/
+    username: uid=root,cn=users,dc=abacussw,dc=co,dc=kr
+    password: Abacus10!@
+    base: dc=abacussw,dc=co,dc=kr
+    user:
+      dn:
+        pattern: uid={0},cn=users,dc=abacussw,dc=co,dc=kr
+
+
 logging:
   level:
     org:
